@@ -1,0 +1,22 @@
+// based on a keyboard map from an 'xkb/symbols/no' file
+
+default  partial alphanumeric_keys
+xkb_symbols "basic" {
+
+    //Custom keyboard definition that maintains the us layout and implements 
+    //oslash, ae and aa, for writing in norwegian and maintaining shortcuts
+    //learned from an english keyboard 
+
+    include "us(basic)"
+
+    name[Group1]="Norwegian";
+    key <AD03>  { [         e,          E,           ae,               AE       ] };
+    key <AD01>  { [         q,          Q,           oslash,           Ooblique ] };
+    key <AC01>  { [         a,          A,           aring,            Aring    ] };
+    key <LSGT>	{ [        ae,         AE,           oslash,           Ooblique ] };
+
+    include "nbsp(level3n)"
+    include "keypad(ossmath)"
+
+    include "level3(ralt_switch)"
+};
